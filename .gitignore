@@ -310,3 +310,6 @@ TSWLatexianTemp*
 
 # Checkpoint files
 .ipynb_checkpoints/
+
+# CSV files
+code/data/*.csv
