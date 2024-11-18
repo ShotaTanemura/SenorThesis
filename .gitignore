@@ -307,3 +307,6 @@ TSWLatexianTemp*
 
 # .env files
 .env
+
+# Checkpoint files
+.ipynb_checkpoints/
