@@ -313,3 +313,6 @@ TSWLatexianTemp*
 
 # CSV files
 code/data/*.csv
+
+#cusotom
+.DS_Store
