@@ -347,6 +347,7 @@
 
     \begin{table}[H]
         \centering
+        \resizebox{\textwidth}{!}{
         \begin{tabular}{|c|c|c|c|c|c|c|}
             \hline
             変数 & 回帰係数（coef） & 標準誤差（std err） & t値（t） & $P>|t|$ & 95\%信頼区間（下限） & 95\%信頼区間（上限） \\
@@ -357,6 +358,7 @@
             交互作用（interaction） & 55.6691 & 25.767 & 2.161 & 0.032 & 4.884 & 106.454 \\
             \hline
         \end{tabular}
+        }
         \caption{投稿数の変化に関するOLS回帰結果}
         \label{tab:ols_results}
     \end{table}
@@ -390,6 +392,7 @@
     \centering
     \caption{WLS Regression Results for Sentiment Score}
     \label{tab:wls_results}
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{|l|c|c|c|c|c|c|}
         \hline
         変数 & 回帰係数（Coefficient） & 標準誤差（Std. Err.） & t値（t） & $P>|t|$ & 95\%信頼区間（下限） & 95\%信頼区間（上限） \\
@@ -400,18 +403,16 @@
         interaction & 0.0528 & 0.014 & 3.851 & 0.000 & 0.026 & 0.080 \\
         \hline
     \end{tabular}
+    }
     \end{table}
 
     \subsection*{主要な観測結果}
-    - **定数項（Intercept）**: 基本的なセンチメントスコアの平均値（侵攻前の水準）は**0.1940**で、統計的に有意（$p < 0.001$）。
-    - **treatment（侵攻の影響）**: 
-      - センチメントスコアに対して**-0.3342**の減少効果を持つ。
-      - この変数は統計的に有意（$p < 0.001$）。
-    - **post\_treatment（侵攻後の全体的な変化）**:
-      - 侵攻後の全体的な変化は**0.0049**で、統計的に有意ではない（$p = 0.715$）。
-    - **interaction（侵攻後の特定グループへの影響）**:
-      - 侵攻後の特定条件下では、センチメントスコアが**0.0528**増加。
-      - この変化は統計的に有意（$p < 0.001$）。
+    \begin{itemize}
+        \item 定数項（Intercept）: 基本的なセンチメントスコアの平均値（侵攻前の水準）は0.1940で、統計的に有意（$p < 0.001$）。
+        \item treatment（侵攻の影響）: センチメントスコアに対して-0.3342の減少効果を持つ。この変数は統計的に有意（$p < 0.001$）。
+        \item post\_treatment（侵攻後の全体的な変化）: 侵攻後の全体的な変化は0.0049で、統計的に有意ではない（$p = 0.715$）。
+        \item interaction（侵攻後の特定グループへの影響）: 侵攻後の特定条件下では、センチメントスコアが0.0528増加。この変化は統計的に有意（$p < 0.001$）。
+    \end{itemize}
 
     \subsection*{観察された傾向}
     センチメントスコアの全体的な変化は小さいが、交互作用効果が統計的に有意であり、侵攻直後の特定の条件下ではポジティブな方向にシフトしている。
@@ -424,15 +425,21 @@
     DTMの結果、以下の3つのトピックが抽出された。それぞれが異なるテーマを反映している。
 
     \begin{itemize}
-        \item **トピック1: 紛争と軍事行動**  
-            - 用語例: \textit{hamas, gaza, idf, attack, war, civilians}  
-            - このトピックは、軍事行動、武装組織（ハマスやヒズボラ）、および民間人への影響に関連している。
-        \item **トピック2: 歴史的および政治的議論**  
-            - 用語例: \textit{land, jewish, palestinians, state, history, colonization}  
-            - このトピックは、土地問題、ユダヤ人とパレスチナ人の歴史的対立、国家形成に関する議論を反映している。
-        \item **トピック3: 規則・メタ的議論**  
-            - 用語例: \textit{https, please, rule, action, comments, subreddit}  
-            - このトピックは、Reddit内部の規則、コメントの管理、投稿の削除に関するメタ的な議論を示している。
+        \item トピック1: 紛争と軍事行動 
+        \begin{itemize}
+            \item 用語例: \textit{hamas, gaza, idf, attack, war, civilians}  
+            \item このトピックは、軍事行動、武装組織（ハマスやヒズボラ）、および民間人への影響に関連している。
+        \end{itemize}
+        \item トピック2: 歴史的および政治的議論  
+        \begin{itemize}
+            \item 用語例: \textit{land, jewish, palestinians, state, history, colonization}  
+            \item このトピックは、土地問題、ユダヤ人とパレスチナ人の歴史的対立、国家形成に関する議論を反映している。
+        \end{itemize}
+        \item トピック3: 規則・メタ的議論  
+        \begin{itemize}
+            \item 用語例: \textit{https, please, rule, action, comments, subreddit}  
+            \item このトピックは、Reddit内部の規則、コメントの管理、投稿の削除に関するメタ的な議論を示している。
+        \end{itemize}
     \end{itemize}
 
     \subsection*{トピックの割合の変遷}
@@ -441,6 +448,7 @@
     \begin{table}[H]
     \centering
     \caption{各週におけるトピックの割合}
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{|l|c|c|c|}
         \hline
         週 & トピック1: 紛争と軍事行動 & トピック2: 歴史的および政治的議論 & トピック3: 規則・メタ的議論 \\
@@ -450,15 +458,16 @@
         2024年11月4日～11月10日 & 40\% & 25\% & 35\% \\
         \hline
     \end{tabular}
+    }
     \label{tab:topic_ratios}
     \end{table}
 
     \subsection*{観察されたトレンド}
     トピックの割合は以下のように変遷している:
     \begin{itemize}
-        \item **初期段階（2024年7月～9月）**: 「歴史的および政治的議論（トピック2）」が主流で、議論の焦点が過去の対立や土地問題に集中していた。
-        \item **侵攻直後（2024年10月7日～10月13日）**: 「紛争と軍事行動（トピック1）」が50\%に達し、侵攻や軍事的イベントへの注目が大幅に増加。
-        \item **後期（2024年11月以降）**: 「規則・メタ的議論（トピック3）」が35\%に増加し、プラットフォーム内部での投稿や規則に対する議論が活発化。
+        \item 初期段階（2024年7月～9月）: 「歴史的および政治的議論（トピック2）」が主流で、議論の焦点が過去の対立や土地問題に集中していた。
+        \item 侵攻直後（2024年10月7日～10月13日）: 「紛争と軍事行動（トピック1）」が50\%に達し、侵攻や軍事的イベントへの注目が大幅に増加。
+        \item 後期（2024年11月以降）: 「規則・メタ的議論（トピック3）」が35\%に増加し、プラットフォーム内部での投稿や規則に対する議論が活発化。
     \end{itemize}
 
     \subsection*{図示されたトピックの変遷}
@@ -466,7 +475,7 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{topic_trends_plot_updated.png}
+        \includegraphics[width=0.8\textwidth]{topic_trends_plot.png}
         \caption{週ごとのトピック出現割合の推移（2024年7月～11月）}
         \label{fig:topic_trends}
     \end{figure}
