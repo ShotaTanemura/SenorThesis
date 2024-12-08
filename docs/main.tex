@@ -26,6 +26,10 @@
     geometry
 }
 
+% 図や表のナンバリングを章に依存せず、通し番号にする設定
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+
 \begin{document}
     \thispagestyle{empty}
     \begin{center}
