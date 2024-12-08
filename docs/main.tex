@@ -291,8 +291,7 @@
     \section{投稿数の変化}
     10月1日のイスラエルによるレバノン侵攻を境に、投稿数にどのような変化が生じたかをOLS回帰分析により検証した。その結果、侵攻後の投稿数において統計的に有意な増加が観察された。特に、群間の交互作用効果（\textit{interaction}）が有意であり（$p = 0.032$）、侵攻後の特定サブレディットにおける投稿数の増加が確認された。
 
-    \subsection*{回帰結果の概要}
-    以下に回帰結果を示す。
+    表\ref{tab:ols_results}は回帰結果を示している。
 
     \begin{table}[H]
         \centering
@@ -312,16 +311,9 @@
         \label{tab:ols_results}
     \end{table}
 
-    \subsection*{主要な観測結果}
-    \begin{itemize}
-        \item 定数項（\textit{Intercept}）: 基本的な投稿数の平均は約143.92件（$p < 0.001$）。
-        \item 群の効果（\textit{group}）: 群間の差異は統計的に有意ではない（$p = 0.319$）。
-        \item 侵攻後の効果（\textit{post\_treatment}）: 全体的な投稿数の減少傾向が見られるが、有意ではない（$p = 0.234$）。
-        \item 交互作用効果（\textit{interaction}）: 侵攻後の特定群において投稿数が約55.67件増加しており、有意な効果が確認された（$p = 0.032$）。
-    \end{itemize}
+    主な観測結果としては以下の通りである。定数項（\textit{Intercept}）については、基本的な投稿数の平均が約143.92件であり、この結果は統計的に有意であった（$p < 0.001$）。群の効果（\textit{group}）に関しては、群間の差異は統計的に有意ではないと示された（$p = 0.319$）。次に、侵攻後の効果（\textit{post\_treatment}））では、全体的な投稿数の減少傾向が観察されたものの、この結果は有意ではなかった（$p = 0.234$）。一方で、交互作用効果（\textit{interaction}）については、侵攻後の特定群において投稿数が約55.67件増加しており、この効果は統計的に有意であることが確認された（$p = 0.032$）。
 
-    \subsection*{図示された投稿数のの変遷}
-    以下に各週の投稿数の推移を図示する。
+    また、図\ref{fig:submissions_comments_trends}は日毎の投稿数の推移を示している。
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{submission_count_plot.png}
@@ -329,7 +321,7 @@
         \label{fig:submissions_comments_trends}
     \end{figure}
 
-    以上の結果は、侵攻後に特定のサブレディットにおいて投稿数が有意に増加したことを示している。この変化は交互作用効果によって説明される。
+    以上の結果は、侵攻後に特定のサブレディットにおいて投稿数が有意に増加したことを示している。この変化は表\ref{tab:ols_results}における交互作用効果によって裏付けられている。
 
     \section{センチメントスコアの変化: WLS分析結果}
     センチメントスコアについても、侵攻前後の変化を分析した。Table~\ref{tab:wls_results}に示すWLS回帰分析の結果によると、対象サブレディットにおけるセンチメントスコアは、全体的にポジティブな方向にシフトしていることが確認された。ただし、侵攻後全体の変化（\textit{post\_treatment}）は統計的に有意ではないが、交互作用効果（\textit{interaction}）は統計的に有意であった。
